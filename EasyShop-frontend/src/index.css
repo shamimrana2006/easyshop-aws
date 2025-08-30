@@ -1,0 +1,146 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Dancing+Script:wght@400..700&display=swap");
+
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+.container {
+  margin: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.containerr {
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+@layer components {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+/* 1. Base Theme Variable Setup */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-hover: #020092;
+  --color-pbox: #e9e9e981;
+  --color-primary: #403dff;
+  --color-secondary: #c0c9ff;
+  --color-ptext: #9b9b9b;
+  --color-danger: #ff2929;
+  --color-success: #0eff36;
+  --color-border: #dddddd80;
+}
+
+.green {
+  --color-primary: #00ff62;
+  --color-secondary: #d1ffcd;
+  --color-hover: #189200;
+}
+.blue {
+  --color-primary: #0099ff;
+  --color-secondary: #cdd2ff;
+  --color-hover: #004b92;
+}
+.pink {
+  --color-primary: #ff008c;
+  --color-hover: #8b004d;
+  --color-secondary: #ffcdee;
+}
+.red {
+  --color-primary: #fa0000;
+  --color-hover: #8a0000;
+  --color-secondary: #ff7c7c;
+}
+
+/* 2. Dark Theme Override */
+.dark {
+  --color-pbox: #383838;
+
+  --color-bg: #2c2c2c;
+  --color-text: #ffffff;
+  --color-ptext: #888888;
+  --color-border: #4d4d4d;
+}
+
+div,
+section,
+button {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+@theme {
+  --color-danger: var(--color-danger);
+  --color-success: var(--color-success);
+  --color-pbox: var(--color-pbox);
+  --color-bg: var(--color-bg);
+  --color-text: var(--color-text);
+  --color-ptext: var(--color-ptext);
+  --color-primary: var(--color-primary);
+  --color-hover: var(--color-hover);
+  --color-secondary: var(--color-secondary);
+  --color-border: var(--color-border);
+  --color-FontStyle: "Dancing Script", cursive;
+}
+
+@layer utilities {
+  .smooth-transition {
+    @apply transition duration-200 ease-in-out;
+  }
+}
+
+.profileNab .active::after {
+  content: "";
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+  display: block;
+}
+.profileNave .active {
+  color: var(--color-black);
+  background: var(--color-secondary) !important;
+
+}
+
+.navmain .active {
+  background: var(--color-secondary) !important;
+  color: black;
+  border-top-left-radius:0px ;
+  border-top-right-radius:15px ;
+  border-bottom-left-radius:12px ;
+}
+
+.btn {
+  border-radius: 10px;
+  background: var(--color-primary);
+  font-size: small;
+  padding: 15px;
+  color: white;
+}
+
+.btn-sm {
+  padding: 10px !important;
+}
+
+.menuListLargeDevice a {
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.fontLogo {
+  font-family: "Agbalumo", system-ui;
+  font-weight: bold;
+}
+
+.profileNab::-webkit-scrollbar {
+  display: none; /* শুধু এই element এর scrollbar hide হবে */
+}
